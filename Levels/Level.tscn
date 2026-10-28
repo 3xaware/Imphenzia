@@ -1,0 +1,642 @@
+[gd_scene format=3 uid="uid://ctwn54ipve855"]
+
+[ext_resource type="PackedScene" uid="uid://bp1ojmtwfyhhg" path="res://Imphenzia/PixPal/Meshes/Imphenzia-PixPal-Showcase.fbx" id="1_q5lti"]
+[ext_resource type="Shader" uid="uid://dxoncufpd7fij" path="res://Imphenzia/PixPal/Materials/ImphenziaPixPal.tres" id="2_jst5u"]
+[ext_resource type="Texture2D" uid="uid://dhp5rmw7s2vcm" path="res://Imphenzia/PixPal/Textures/ImphenziaPixPal_Attributes.png" id="3_twieg"]
+[ext_resource type="PackedScene" uid="uid://d0at6dqoebum3" path="res://Imphenzia/PixPal/Meshes/Imphenzia-PixPal-ShowcaseArmature.fbx" id="3_uo3d4"]
+[ext_resource type="Texture2D" uid="uid://c78hml4g8ipgy" path="res://Imphenzia/PixPal/Textures/ImphenziaPixPal_BaseColor.png" id="4_w0pq0"]
+[ext_resource type="Texture2D" uid="uid://bln4kaydk2cal" path="res://Imphenzia/PixPal/Textures/ImphenziaPixPal_Emission.png" id="5_voys3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aunax"]
+sky_top_color = Color(0.454902, 0.670588, 1, 1)
+sky_horizon_color = Color(0.964706, 0.976471, 1, 1)
+ground_bottom_color = Color(0.454902, 0.670588, 1, 1)
+ground_horizon_color = Color(0.964706, 0.976471, 1, 1)
+
+[sub_resource type="Sky" id="Sky_f74i4"]
+sky_material = SubResource("ProceduralSkyMaterial_aunax")
+
+[sub_resource type="Environment" id="Environment_kttxm"]
+background_mode = 2
+sky = SubResource("Sky_f74i4")
+ambient_light_source = 3
+reflected_light_source = 2
+ssr_enabled = true
+ssao_enabled = true
+ssao_intensity = 2.36
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_read_sky_light = false
+glow_enabled = true
+glow_intensity = 0.57
+glow_strength = 0.54
+glow_bloom = 0.76
+glow_hdr_threshold = 1.48
+glow_hdr_scale = 1.31
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyjqm"]
+render_priority = 0
+shader = ExtResource("2_jst5u")
+shader_parameter/Attributes = ExtResource("3_twieg")
+shader_parameter/BaseColorTexture = ExtResource("4_w0pq0")
+shader_parameter/Emission = ExtResource("5_voys3")
+shader_parameter/EmissionStrength = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tq4e"]
+render_priority = 0
+shader = ExtResource("2_jst5u")
+shader_parameter/Attributes = ExtResource("3_twieg")
+shader_parameter/BaseColorTexture = ExtResource("4_w0pq0")
+shader_parameter/Emission = ExtResource("5_voys3")
+shader_parameter/EmissionStrength = 20.0
+
+[node name="Node3D" type="Node3D" unique_id=166230515]
+
+[node name="Lighting" type="Node" parent="." unique_id=1155991104]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting" unique_id=1179179259]
+environment = SubResource("Environment_kttxm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" unique_id=1369569619]
+transform = Transform3D(-0.504503, 0.699502, 0.506136, 0.189858, -0.481981, 0.855364, 0.842277, 0.527627, 0.110355, 0, 2.11466, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 40.4
+
+[node name="Imphenzia-PixPal-Showcase" parent="." unique_id=1351256376 instance=ExtResource("1_q5lti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00790596, -2.38419e-07, -0.00444627)
+
+[node name="CA-WMicrowaveOwen-01-DarkMetal_002" parent="Imphenzia-PixPal-Showcase" index="0" unique_id=1077285071]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CAW-Dryer-01-GrayMetal_002" parent="Imphenzia-PixPal-Showcase" index="1" unique_id=539395506]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CAW-Washer-01-White_004" parent="Imphenzia-PixPal-Showcase" index="2" unique_id=1567540481]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CCP-Appliance-Cooker-01_002" parent="Imphenzia-PixPal-Showcase" index="3" unique_id=598261286]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CCP-Appliance-Dishwasher-01_002" parent="Imphenzia-PixPal-Showcase" index="4" unique_id=255035668]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CCP-Appliance-Fridge-01_002" parent="Imphenzia-PixPal-Showcase" index="5" unique_id=647520506]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CCP-Appliance-Greezer-01_001" parent="Imphenzia-PixPal-Showcase" index="6" unique_id=1755686472]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CE-GameConsole-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="7" unique_id=1325472627]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CE-Speaker-02-Medium-White_001" parent="Imphenzia-PixPal-Showcase" index="8" unique_id=1888556361]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CE-Speaker-02-Medium-White_002" parent="Imphenzia-PixPal-Showcase" index="9" unique_id=367500937]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CE-TV-Large-Stand-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="10" unique_id=1759973402]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CEW-Amplifier-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="11" unique_id=1618437968]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CEW-Amplifier-04-Black_001" parent="Imphenzia-PixPal-Showcase" index="12" unique_id=1477225758]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CEW-Computer-02-Black_001" parent="Imphenzia-PixPal-Showcase" index="13" unique_id=1737437277]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CEW-GameConsole-03-White_001" parent="Imphenzia-PixPal-Showcase" index="14" unique_id=717922700]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CEW-GameConsole-06_001" parent="Imphenzia-PixPal-Showcase" index="15" unique_id=1532474377]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CEW-Monitor-03-Black_001" parent="Imphenzia-PixPal-Showcase" index="16" unique_id=964560028]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CEW-Soundbar-02-Black_001" parent="Imphenzia-PixPal-Showcase" index="17" unique_id=1231520375]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CEW-TV-Medium-Stand-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="18" unique_id=359657192]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Bench-TV-03-Black_001" parent="Imphenzia-PixPal-Showcase" index="19" unique_id=2111154777]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Cabinet-03-Brown_001" parent="Imphenzia-PixPal-Showcase" index="20" unique_id=325663039]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Cabinet-04-White_001" parent="Imphenzia-PixPal-Showcase" index="21" unique_id=605605471]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Cabinet-04-White_002" parent="Imphenzia-PixPal-Showcase" index="22" unique_id=846593034]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Cabinet-Kitchen-0_6m-Raised-Door-White_002" parent="Imphenzia-PixPal-Showcase" index="23" unique_id=607361185]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Cabinet-Kitchen-0_6m-Raised-Drawers-White_004" parent="Imphenzia-PixPal-Showcase" index="24" unique_id=611274948]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Cabinet-Kitchen-0_6m-Raised-Tall-Door-White_002" parent="Imphenzia-PixPal-Showcase" index="25" unique_id=2031588226]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Cabinet-Kitchen-1m-Raised-UnderSink-White_003" parent="Imphenzia-PixPal-Showcase" index="26" unique_id=685752382]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Chair-Dining-05-Blue_001" parent="Imphenzia-PixPal-Showcase" index="27" unique_id=582380075]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Couch-01-2S-Red_001" parent="Imphenzia-PixPal-Showcase" index="28" unique_id=1634788379]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Counter-Kitchen-2m-Sink-Black_002" parent="Imphenzia-PixPal-Showcase" index="29" unique_id=1570607674]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Counter-Kitchen-2m-White_003" parent="Imphenzia-PixPal-Showcase" index="30" unique_id=1187241439]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Mirror-ThickFrame-Tall-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="31" unique_id=799125768]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Picture-Frame-Tall-01-Brown_001" parent="Imphenzia-PixPal-Showcase" index="32" unique_id=748525989]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Picture-ThickFrame-Square-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="33" unique_id=1000633776]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Picture-ThickFrame-Wide-01-White_001" parent="Imphenzia-PixPal-Showcase" index="34" unique_id=1565689621]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Shelf-03-Brown_001" parent="Imphenzia-PixPal-Showcase" index="35" unique_id=1199971320]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Shelf-04-White_001" parent="Imphenzia-PixPal-Showcase" index="36" unique_id=1138523672]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-ShelfSpice-01-Brown_002" parent="Imphenzia-PixPal-Showcase" index="37" unique_id=654693856]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-ShelfSpice-01-White_001" parent="Imphenzia-PixPal-Showcase" index="38" unique_id=292807399]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CF-Table-Dining-06-Black_001" parent="Imphenzia-PixPal-Showcase" index="39" unique_id=1426095474]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Bed-King-02-Wood-Blue_001" parent="Imphenzia-PixPal-Showcase" index="40" unique_id=184843536]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Bench-TV-03-White_001" parent="Imphenzia-PixPal-Showcase" index="41" unique_id=193830496]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Cabinet-03-White_001" parent="Imphenzia-PixPal-Showcase" index="42" unique_id=310807105]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Chair-Dining-02-White_004" parent="Imphenzia-PixPal-Showcase" index="43" unique_id=1295778373]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Chair-Dining-02-White_005" parent="Imphenzia-PixPal-Showcase" index="44" unique_id=815355913]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Chair-Dining-02-White_006" parent="Imphenzia-PixPal-Showcase" index="45" unique_id=938015176]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Chair-Dining-02-White_007" parent="Imphenzia-PixPal-Showcase" index="46" unique_id=819070584]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Chair-Dining-02-White_008" parent="Imphenzia-PixPal-Showcase" index="47" unique_id=472838487]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Chair-Dining-02-White_009" parent="Imphenzia-PixPal-Showcase" index="48" unique_id=1038788984]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Desk-09-White_001" parent="Imphenzia-PixPal-Showcase" index="49" unique_id=1232408726]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CFW-Table-Coffee-06-Black_001" parent="Imphenzia-PixPal-Showcase" index="50" unique_id=1185853127]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-AC-03-White_001" parent="Imphenzia-PixPal-Showcase" index="51" unique_id=889552165]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Aquarium-06_001" parent="Imphenzia-PixPal-Showcase" index="52" unique_id=686867749]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-BarStool-02-Black_001" parent="Imphenzia-PixPal-Showcase" index="53" unique_id=651223325]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-BarStool-02-Black_002" parent="Imphenzia-PixPal-Showcase" index="54" unique_id=1953671284]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-BarStool-02-Black_003" parent="Imphenzia-PixPal-Showcase" index="55" unique_id=53861853]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Bin-02-Metal_001" parent="Imphenzia-PixPal-Showcase" index="56" unique_id=1987288524]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Book-17_001" parent="Imphenzia-PixPal-Showcase" index="57" unique_id=490571213]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Book-21_001" parent="Imphenzia-PixPal-Showcase" index="58" unique_id=395188827]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Book-28_001" parent="Imphenzia-PixPal-Showcase" index="59" unique_id=1475818698]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Book-40_001" parent="Imphenzia-PixPal-Showcase" index="60" unique_id=677290943]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-01_001" parent="Imphenzia-PixPal-Showcase" index="61" unique_id=931767144]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-02_001" parent="Imphenzia-PixPal-Showcase" index="62" unique_id=14205850]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-03_001" parent="Imphenzia-PixPal-Showcase" index="63" unique_id=1766625575]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-04_001" parent="Imphenzia-PixPal-Showcase" index="64" unique_id=311540903]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-05_001" parent="Imphenzia-PixPal-Showcase" index="65" unique_id=164175503]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-06_001" parent="Imphenzia-PixPal-Showcase" index="66" unique_id=1729742173]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-07_001" parent="Imphenzia-PixPal-Showcase" index="67" unique_id=441306393]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-08_001" parent="Imphenzia-PixPal-Showcase" index="68" unique_id=361449358]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Books-09_001" parent="Imphenzia-PixPal-Showcase" index="69" unique_id=1277491405]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Bottle-01_001" parent="Imphenzia-PixPal-Showcase" index="70" unique_id=1930641441]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Bottle-08_001" parent="Imphenzia-PixPal-Showcase" index="71" unique_id=1642189898]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Bottle-09_001" parent="Imphenzia-PixPal-Showcase" index="72" unique_id=1197605332]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Bowl-01-Fruit_001" parent="Imphenzia-PixPal-Showcase" index="73" unique_id=2086794433]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Box-03_001" parent="Imphenzia-PixPal-Showcase" index="74" unique_id=1602953996]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Box-07_001" parent="Imphenzia-PixPal-Showcase" index="75" unique_id=1858359594]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Box-17_001" parent="Imphenzia-PixPal-Showcase" index="76" unique_id=1563134743]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Clock-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="77" unique_id=248468134]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-ComputerKeyboard-03-Black_001" parent="Imphenzia-PixPal-Showcase" index="78" unique_id=1968820485]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-ComputerMouse-02-Black_001" parent="Imphenzia-PixPal-Showcase" index="79" unique_id=666306697]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-ComputerMouseMat-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="80" unique_id=1563475218]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-DigitalPanel-02-Metal-BlueLight_001" parent="Imphenzia-PixPal-Showcase" index="81" unique_id=1749305364]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Jar-12_001" parent="Imphenzia-PixPal-Showcase" index="82" unique_id=1121082657]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Lamp-Floor-04-Metal-On_001" parent="Imphenzia-PixPal-Showcase" index="83" unique_id=738148180]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Lamp-Table-Small-05-Metal-On_001" parent="Imphenzia-PixPal-Showcase" index="84" unique_id=1712346187]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Lamp-Table-Small-06-Metal-On_002" parent="Imphenzia-PixPal-Showcase" index="85" unique_id=115394559]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Lamp-Wall-07-Metal-On_001" parent="Imphenzia-PixPal-Showcase" index="86" unique_id=946955734]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Lamp-Wall-07-Metal-On_002" parent="Imphenzia-PixPal-Showcase" index="87" unique_id=586345660]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Lamp-Wall-07-Metal-On_003" parent="Imphenzia-PixPal-Showcase" index="88" unique_id=955161677]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-OfficeChair-02-Blue_001" parent="Imphenzia-PixPal-Showcase" index="89" unique_id=1846869259]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Piano-02-Black_001" parent="Imphenzia-PixPal-Showcase" index="90" unique_id=1719756567]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Plant-Flower-01-Purple-Yellow_001" parent="Imphenzia-PixPal-Showcase" index="91" unique_id=650942111]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Plant-Flower-03-Blue-Yellow_001" parent="Imphenzia-PixPal-Showcase" index="92" unique_id=679654132]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Plant-Pot-02-Teal_001" parent="Imphenzia-PixPal-Showcase" index="93" unique_id=1975736217]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Plant-Pot-05-Dark_001" parent="Imphenzia-PixPal-Showcase" index="94" unique_id=1543043557]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Plate-01-Stack5_001" parent="Imphenzia-PixPal-Showcase" index="95" unique_id=1086238597]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Plate-01_001" parent="Imphenzia-PixPal-Showcase" index="96" unique_id=2003320982]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Pot-Small-03-Sandstone_001" parent="Imphenzia-PixPal-Showcase" index="97" unique_id=488186545]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Pot-Small-03-Sandstone_002" parent="Imphenzia-PixPal-Showcase" index="98" unique_id=731121916]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Pot-Small-03-Sandstone_003" parent="Imphenzia-PixPal-Showcase" index="99" unique_id=499971496]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Pot-Small-03-Sandstone_004" parent="Imphenzia-PixPal-Showcase" index="100" unique_id=2116478332]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-PowerSocket-02-Metal_001" parent="Imphenzia-PixPal-Showcase" index="101" unique_id=1342075696]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-PowerSocket-02-Metal_002" parent="Imphenzia-PixPal-Showcase" index="102" unique_id=34223333]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-PowerSocket-02-Metal_003" parent="Imphenzia-PixPal-Showcase" index="103" unique_id=2095671777]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Printer-01-Black-Paper_001" parent="Imphenzia-PixPal-Showcase" index="104" unique_id=1723257961]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Tin-02_001" parent="Imphenzia-PixPal-Showcase" index="105" unique_id=732078970]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIM-Tin-04_001" parent="Imphenzia-PixPal-Showcase" index="106" unique_id=1830001673]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIMW-BedsideTable-02-White_001" parent="Imphenzia-PixPal-Showcase" index="107" unique_id=1857772154]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIMW-Drawers-03-Brown_001" parent="Imphenzia-PixPal-Showcase" index="108" unique_id=1003204710]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIMW-Radiator-02-White_001" parent="Imphenzia-PixPal-Showcase" index="109" unique_id=1730237152]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIMW-RemovalBox-01_001" parent="Imphenzia-PixPal-Showcase" index="110" unique_id=2062606815]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CIMW-Rug-Large-Pattern-04-Alt3_001" parent="Imphenzia-PixPal-Showcase" index="111" unique_id=679930495]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Bowl-04_002" parent="Imphenzia-PixPal-Showcase" index="112" unique_id=880729522]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Bowl-05_001" parent="Imphenzia-PixPal-Showcase" index="113" unique_id=490634814]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Candle-01-Pink_005" parent="Imphenzia-PixPal-Showcase" index="114" unique_id=14230213]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Candle-01-Pink_006" parent="Imphenzia-PixPal-Showcase" index="115" unique_id=746635469]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Candle-01-Pink_007" parent="Imphenzia-PixPal-Showcase" index="116" unique_id=1955219332]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Candle-01-Pink_008" parent="Imphenzia-PixPal-Showcase" index="117" unique_id=612390528]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Kettle-01-Black_002" parent="Imphenzia-PixPal-Showcase" index="118" unique_id=1781034919]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Cactus-04-Light_001" parent="Imphenzia-PixPal-Showcase" index="119" unique_id=1415465788]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Flower-01-Red-Yellow_001" parent="Imphenzia-PixPal-Showcase" index="120" unique_id=1030136585]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Flower-01-Red-Yellow_002" parent="Imphenzia-PixPal-Showcase" index="121" unique_id=1975886735]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Flower-04-Red-Yellow_001" parent="Imphenzia-PixPal-Showcase" index="122" unique_id=342536571]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Flower-04-Red-Yellow_002" parent="Imphenzia-PixPal-Showcase" index="123" unique_id=2073868114]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Flower-04-Red-Yellow_003" parent="Imphenzia-PixPal-Showcase" index="124" unique_id=1163550731]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Palm-02-Light_001" parent="Imphenzia-PixPal-Showcase" index="125" unique_id=1384199421]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Snake-03-Teal_001" parent="Imphenzia-PixPal-Showcase" index="126" unique_id=1045867892]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Tree-01_007" parent="Imphenzia-PixPal-Showcase" index="127" unique_id=1832657955]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Plant-Tree-05-Pink_001" parent="Imphenzia-PixPal-Showcase" index="128" unique_id=1040499020]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Huge-02-Black_001" parent="Imphenzia-PixPal-Showcase" index="129" unique_id=17994043]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Large-01-Plum_001" parent="Imphenzia-PixPal-Showcase" index="130" unique_id=837018662]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Large-01-Plum_002" parent="Imphenzia-PixPal-Showcase" index="131" unique_id=1024841894]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Large-01-Sandstone_001" parent="Imphenzia-PixPal-Showcase" index="132" unique_id=2043025289]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Medium-01-Oyster_001" parent="Imphenzia-PixPal-Showcase" index="133" unique_id=420786109]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Medium-01-Oyster_002" parent="Imphenzia-PixPal-Showcase" index="134" unique_id=842270770]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Small-01-DarkGray_001" parent="Imphenzia-PixPal-Showcase" index="135" unique_id=37592330]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Tiny-01-Black_001" parent="Imphenzia-PixPal-Showcase" index="136" unique_id=2080584506]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Tiny-01-Black_002" parent="Imphenzia-PixPal-Showcase" index="137" unique_id=1413110646]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Tiny-01-Black_003" parent="Imphenzia-PixPal-Showcase" index="138" unique_id=1971489470]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Pot-Tiny-01-Oyster_001" parent="Imphenzia-PixPal-Showcase" index="139" unique_id=1310513364]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Rug-Large-Pattern-01_002" parent="Imphenzia-PixPal-Showcase" index="140" unique_id=361182174]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Rug-Large-Plain-01-Dark_002" parent="Imphenzia-PixPal-Showcase" index="141" unique_id=1995643753]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Rug-Medium-Striped-01-Blue_001" parent="Imphenzia-PixPal-Showcase" index="142" unique_id=960205279]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Rug-Medium-Striped-01-Red_001" parent="Imphenzia-PixPal-Showcase" index="143" unique_id=1253511502]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CP-Toaster-02-Chrome_001" parent="Imphenzia-PixPal-Showcase" index="144" unique_id=1595816194]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="CSW-Shelf-05-White_001" parent="Imphenzia-PixPal-Showcase" index="145" unique_id=722923532]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="Cube_006" parent="Imphenzia-PixPal-Showcase" index="146" unique_id=581005971]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="PaletteQuadExample" parent="Imphenzia-PixPal-Showcase" index="147" unique_id=83068204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05027, 3.05291, 5.5215)
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="PixPalSign" parent="Imphenzia-PixPal-Showcase" index="148" unique_id=1215555149]
+material_override = SubResource("ShaderMaterial_uyjqm")
+cast_shadow = 0
+
+[node name="Plane_008" parent="Imphenzia-PixPal-Showcase" index="149" unique_id=128846280]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="Plane_009" parent="Imphenzia-PixPal-Showcase" index="150" unique_id=1800974410]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="R35" parent="Imphenzia-PixPal-Showcase" index="151" unique_id=2045076442]
+material_override = SubResource("ShaderMaterial_uyjqm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Imphenzia-PixPal-Showcase" unique_id=1492762777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -1)
+light_color = Color(1.11663e-05, 0.634976, 0.942105, 1)
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Imphenzia-PixPal-Showcase" unique_id=716967455]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.27941, -4.95867)
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Imphenzia-PixPal-Showcase" unique_id=170975727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.27941, 3.34256)
+light_color = Color(0.82878, 0.540401, 0.373159, 1)
+shadow_enabled = true
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Imphenzia-PixPal-Showcase" unique_id=2025283056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78692, 2.88276, -0.236443)
+shadow_enabled = true
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Imphenzia-PixPal-Showcase" unique_id=1723538144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01833, 1.06756, 5.1497)
+light_color = Color(0.970174, 0.752557, 0.548409, 1)
+shadow_enabled = true
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Imphenzia-PixPal-Showcase" unique_id=1413151324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75168, 1.83636, 4.21582)
+light_color = Color(0.877218, 0.77815, 0.777132, 1)
+shadow_enabled = true
+
+[node name="Imphenzia-PixPal-ShowcaseArmature" parent="." unique_id=1133024436 instance=ExtResource("3_uo3d4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00790644, -2.38419e-07, 0.00444651)
+
+[node name="Skeleton3D" parent="Imphenzia-PixPal-ShowcaseArmature/CCM-Armature" parent_id_path=PackedInt32Array(1133024436, 850322645) index="0" unique_id=1378883279]
+bones/1/rotation = Quaternion(-0.017624272, 0.7068871, 0.7068871, -0.017624445)
+bones/3/position = Vector3(0.15930146, 0.14339888, -0.032634802)
+bones/3/rotation = Quaternion(-0.013854482, 0.7069711, -0.706971, 0.013854104)
+bones/3/scale = Vector3(1, 1, 1)
+bones/5/position = Vector3(-0.153328, 0.377345, 0.534462)
+bones/5/rotation = Quaternion(0.0176245, 0.706887, 0.706887, 0.0176243)
+bones/7/position = Vector3(-0.15930149, 0.14339888, -0.032634698)
+bones/7/rotation = Quaternion(-0.01385415, -0.70697105, 0.70697105, 0.013854337)
+bones/9/position = Vector3(0, 0.52990067, 0)
+bones/9/rotation = Quaternion(0.13396746, 8.663476e-08, -3.1940328e-08, 0.99098575)
+bones/10/position = Vector3(8.55603e-09, 0.119992, 1.34923e-08)
+bones/10/rotation = Quaternion(-0.16222435, 1.4899572e-07, -7.79013e-15, 0.9867539)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/position = Vector3(2.07477e-08, 0.174321, 1.74286e-09)
+bones/11/rotation = Quaternion(-0.015263143, -1.5097824e-07, -2.4566865e-15, 0.99988353)
+bones/12/position = Vector3(-3.33054e-08, 0.250156, -2.16898e-08)
+bones/12/rotation = Quaternion(0.04382268, 3.1755995e-08, -5.224067e-09, 0.99903935)
+bones/14/position = Vector3(0.0860228, 0.161036, -0.0078336)
+bones/14/rotation = Quaternion(0.02424019, 0.036507946, -0.83228344, 0.55261546)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/position = Vector3(-1.02768e-07, 0.141872, -1.15187e-08)
+bones/15/rotation = Quaternion(-2.4362736e-08, 1.7633239e-08, -0.072477095, 0.99737006)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/position = Vector3(2.3028e-08, 0.243921, 3.70506e-08)
+bones/16/rotation = Quaternion(0.0683658, 3.94331e-05, 0.000577022, 0.99766)
+bones/17/position = Vector3(-4.40335e-08, 0.1561, 3.99161e-08)
+bones/17/rotation = Quaternion(-0.0257766, -0.00455393, -0.0408451, 0.998823)
+bones/17/scale = Vector3(1, 1, 1)
+bones/19/position = Vector3(-0.0860229, 0.161036, -0.00783356)
+bones/19/rotation = Quaternion(0.024240335, -0.03650787, 0.8322835, 0.5526155)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/position = Vector3(9.8289e-08, 0.141872, 9.43151e-09)
+bones/20/rotation = Quaternion(-1.355332e-08, -7.2190836e-08, 0.072477095, 0.99737006)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/position = Vector3(-5.28581e-08, 0.243921, 9.74343e-09)
+bones/21/rotation = Quaternion(0.0683658, -3.95183e-05, -0.000577076, 0.99766)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/position = Vector3(-8.48565e-09, 0.1561, -1.00908e-08)
+bones/22/rotation = Quaternion(-0.0257766, 0.00455397, 0.0408451, 0.998823)
+bones/22/scale = Vector3(1, 1, 1)
+bones/24/position = Vector3(0.143371, -0.0275449, 0.0302959)
+bones/24/rotation = Quaternion(0.0055447645, 0.23990503, 0.97044456, -0.02553973)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/position = Vector3(-2.224e-08, 0.204532, 3.55671e-08)
+bones/25/rotation = Quaternion(-0.38410255, 0.0009469084, -0.0052482546, 0.9232751)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/position = Vector3(-3.63168e-08, 0.181427, -1.08347e-08)
+bones/26/rotation = Quaternion(0.73502433, 0.0050966884, 0.00026888176, 0.67802155)
+bones/26/scale = Vector3(1, 1, 1)
+bones/28/position = Vector3(-0.143371, -0.0275449, 0.0302959)
+bones/28/rotation = Quaternion(-0.005544645, 0.23990874, 0.97044367, 0.025539607)
+bones/28/scale = Vector3(1, 1, 1)
+bones/29/position = Vector3(3.11141e-08, 0.204532, 1.39351e-08)
+bones/29/rotation = Quaternion(-0.3841081, -0.00094687147, 0.005248433, 0.9232728)
+bones/29/scale = Vector3(1, 1, 1)
+bones/30/position = Vector3(-5.98462e-08, 0.181427, 6.86111e-08)
+bones/30/rotation = Quaternion(0.7350256, -0.0050970255, -0.00026865932, 0.6780202)
+bones/30/scale = Vector3(1, 1, 1)
+
+[node name="CCM-Astronaut" parent="Imphenzia-PixPal-ShowcaseArmature/CCM-Armature/Skeleton3D" index="0" unique_id=1360392119]
+visible = false
+material_override = SubResource("ShaderMaterial_5tq4e")
+
+[node name="CCM-Barbarian" parent="Imphenzia-PixPal-ShowcaseArmature/CCM-Armature/Skeleton3D" index="1" unique_id=606805069]
+transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0.0154193, 0.0136857, 0.00626421)
+visible = false
+material_override = SubResource("ShaderMaterial_5tq4e")
+
+[node name="CCM-Boxer" parent="Imphenzia-PixPal-ShowcaseArmature/CCM-Armature/Skeleton3D" index="2" unique_id=1123657303]
+visible = false
+material_override = SubResource("ShaderMaterial_5tq4e")
+
+[node name="CCM-Nurse" parent="Imphenzia-PixPal-ShowcaseArmature/CCM-Armature/Skeleton3D" index="3" unique_id=139365133]
+transform = Transform3D(1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 5.36442e-07, 1.78814e-07, -9.53674e-07)
+material_override = SubResource("ShaderMaterial_5tq4e")
+
+[node name="AnimationPlayer" parent="Imphenzia-PixPal-ShowcaseArmature" index="1" unique_id=1877182047]
+reset_on_save = false
+autoplay = &"CCM-Armature|Jump"
+
+[node name="Camera3D" type="Camera3D" parent="Imphenzia-PixPal-ShowcaseArmature" unique_id=676106350]
+transform = Transform3D(-0.822881, -0.154863, 0.546703, -0.00911273, 0.965616, 0.259812, -0.56814, 0.208812, -0.795999, 4.12777, 2.62767, -5.98626)
+
+[editable path="Imphenzia-PixPal-Showcase"]
+[editable path="Imphenzia-PixPal-ShowcaseArmature"]
